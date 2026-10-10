@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 在线检索页
+    url: https://eternity4719.github.io/Workplace-Survival-Handbook/
+    about: 按关键词、章节、证据等级和成本维度筛条目
+  - name: 让 AI 照书回答
+    url: https://github.com/eternity4719/Workplace-Survival-Handbook/blob/main/skills/%E8%81%8C%E5%9C%BA%E5%86%B3%E7%AD%96%E6%8C%87%E5%8D%97/README.md
+    about: 装 skill，让 Claude Code 或 Codex 先查条目再回答

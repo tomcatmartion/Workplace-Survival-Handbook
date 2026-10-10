@@ -1,0 +1,134 @@
+# 正文一改就重新生成四样，挂到固定的 Release「epub-latest」上，下载链接不变：
+#   EPUB        .../epub-latest/Workplace-Survival-Handbook.epub
+#   PDF         .../epub-latest/Workplace-Survival-Handbook.pdf
+#   离线单文件  .../epub-latest/Workplace-Survival-Handbook.html
+#   Anki 牌组  .../epub-latest/Workplace-Survival-Handbook.apkg
+# PR 只生成并校验，不发布，产物在 Actions 页面的 artifact 里。
+name: 电子书
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - README.md
+      - index.html
+      - og.png
+      - book/**
+      - docs/*.md
+      - tools/**
+      - .github/workflows/book.yml
+  pull_request:
+    paths:
+      - README.md
+      - index.html
+      - og.png
+      - book/**
+      - docs/*.md
+      - tools/**
+      - .github/workflows/book.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: book-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PANDOC_VERSION: '3.11'
+  TYPST_VERSION: '0.15.1'
+
+jobs:
+  # 交叉引用检查。单独一个 job，不挂在 build 里：锚点没补好不该连累 EPUB、PDF 和
+  # 离线单文件的发布，那是两回事。PR 上照样红，main 上该发的还是发出去。零依赖。
+  refs:
+    name: 交叉引用检查
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/check-refs.mjs --check
+
+  # 说人话检查：长度、行话、抽象说法。理由同上，单独一个 job，不挡发布。
+  plain:
+    name: 说人话检查
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/check-plain.mjs
+
+  # 拆分规则一致性检查：index.html 里的那份规则和 tools/lib/split-items.mjs 必须同步。
+  split:
+    name: 拆分规则一致性检查
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/check-split.mjs
+
+  # 统计数字检查：README、index.html、og.html 上的数字必须和正文一致。
+  stats:
+    name: 统计数字检查
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/sync-stats.mjs --check
+
+  build:
+    name: 生成四样
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: 离线单文件 HTML
+        run: node tools/offline/build.mjs
+
+      - name: EPUB
+        run: cd tools/epub && npm ci && npm run build
+      - name: epubcheck
+        run: |
+          curl -fsSL -o /tmp/epubcheck.jar https://github.com/w3c/epubcheck/releases/download/v5.1.0/epubcheck-5.1.0.jar
+          java -jar /tmp/epubcheck.jar dist/Workplace-Survival-Handbook.epub || true
+
+      - name: 装 pandoc 和 typst
+        run: |
+          curl -fsSL -o /tmp/pandoc.tar.gz "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-linux-amd64.tar.gz"
+          tar -xzf /tmp/pandoc.tar.gz -C /tmp
+          curl -fsSL -o /tmp/typst.tar.gz "https://github.com/typst/typst/releases/download/v${TYPST_VERSION}/typst-x86_64-unknown-linux-musl.tar.gz"
+          tar -xzf /tmp/typst.tar.gz -C /tmp
+          mkdir -p /tmp/bin
+          mv /tmp/pandoc-${PANDOC_VERSION}/bin/pandoc /tmp/bin/
+          mv /tmp/typst-x86_64-unknown-linux-musl/typst /tmp/bin/
+          echo "/tmp/bin" >> $GITHUB_PATH
+      - name: PDF
+        run: node tools/pdf/build.mjs
+
+      - name: Anki 牌组
+        run: node tools/anki/build.mjs
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: book
+          path: dist/
+
+      - name: 发布到固定 Release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          gh release view epub-latest >/dev/null 2>&1 || gh release create epub-latest --title "电子版（自动生成）" --notes "下载链接固定不变，正文每次更新后自动覆盖。"
+          gh release upload epub-latest dist/* --clobber
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

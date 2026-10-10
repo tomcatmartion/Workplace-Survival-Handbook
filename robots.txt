@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tomcatmartion.github.io/Workplace-Survival-Handbook/sitemap.xml

@@ -1,0 +1,11 @@
+{
+  "name": "workplace-survival-handbook-epub",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "marked": "12.0.2"
+  }
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<!--
+  og.png 的来源页。数字由 `node tools/sync-stats.mjs` 回写，改完版式要重新截图：
+    CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" node tools/sync-stats.mjs
+  不加环境变量时按常见位置找 Chrome。--no-screenshot 只改数字不动图。
+-->
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>og</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1200px;height:630px;background:#3451b2;color:#fff;
+       font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+       display:flex;flex-direction:column;justify-content:center;padding:72px 84px;
+       background:linear-gradient(135deg,#2c439a 0%,#3451b2 55%,#4a67d6 100%)}
+  .k{font-size:22px;letter-spacing:6px;opacity:.75;margin-bottom:22px}
+  h1{font-size:70px;line-height:1.22;font-weight:800;margin-bottom:26px}
+  .sub{font-size:27px;line-height:1.6;opacity:.92;max-width:900px}
+  .nums{margin-top:44px;display:flex;gap:52px;font-size:25px}
+  .nums b{font-size:38px;font-weight:800;display:block;line-height:1.2}
+  .nums span{opacity:.8;font-size:19px}
+  .foot{position:absolute;left:84px;bottom:56px;font-size:19px;opacity:.7}
+</style>
+</head>
+<body>
+  <div class="k">按 性 价 比 排 序</div>
+  <h1>职场打工创业<br>高性价比大全</h1>
+  <div class="sub">用最少的钱、时间和精力，换回最多的收入、时间、健康余量和人身自由。每条写明成本、收益、证据等级和原始出处。</div>
+  <div class="nums">
+    <div><b id="og-sec">134</b><span>节</span></div>
+    <div><b id="og-n">3137</b><span>条建议</span></div>
+    <div><b id="og-a">2856</b><span>条 A 级证据</span></div>
+    <div><b id="og-link">3988</b><span>条原始链接</span></div>
+  </div>
+  <div class="foot">github.com/tomcatmartion/Workplace-Survival-Handbook · CC BY 4.0</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+body{font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",serif;line-height:1.75;margin:0 1em}
+h1{font-size:1.6em;margin:0 0 .6em;padding-top:.4em;border-bottom:1px solid #ccc}
+h2{font-size:1.15em;margin:1.4em 0 .4em;line-height:1.5}
+p{margin:.4em 0;text-indent:0}
+p.tags{font-size:.82em;color:#666;border-left:3px solid #3451b2;padding-left:.6em;margin:.3em 0 .8em}
+.item{margin:0 0 1.6em;padding-bottom:1em;border-bottom:1px dashed #ddd}
+.empty{color:#888;font-size:.9em;border:1px dashed #ccc;padding:.6em .8em;border-radius:6px}
+b{font-weight:700}
+code{font-family:ui-monospace,Consolas,monospace;font-size:.88em;background:#f2f2f4;padding:.1em .3em;border-radius:3px}
+a{color:#3451b2}
+table{border-collapse:collapse;width:100%;font-size:.9em}
+th,td{border:1px solid #ccc;padding:.3em .5em;text-align:left}

@@ -1,0 +1,6 @@
+dist/
+node_modules/
+.DS_Store
+
+# 本地工作记忆（含生成规范与私人记忆），不随公开仓库发布
+.workbuddy/
