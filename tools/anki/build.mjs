@@ -11,7 +11,7 @@ import { zip } from '../lib/zip.mjs';
 const DECK_ID = 2026100901;
 const MODEL_ID = 2026100902;
 const { sections } = await loadBook();
-const TITLE = '职场打工创业高性价比大全';
+const TITLE = '打工创业职场人手一份的职场答疑手册';
 
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const fld = s => esc(s).replace(/\n/g, '<br>');

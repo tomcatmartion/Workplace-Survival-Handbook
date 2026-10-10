@@ -9,7 +9,7 @@ import { itemLines } from '../lib/split-items.mjs';
 import { zip } from '../lib/zip.mjs';
 
 const { sections, readme } = await loadBook();
-const TITLE = '职场打工创业高性价比大全';
+const TITLE = '打工创业职场人手一份的职场答疑手册';
 const css = await readFile(path.join(ROOT, 'tools/epub/style.css'), 'utf8');
 
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -59,7 +59,7 @@ const opf = `<?xml version="1.0" encoding="UTF-8"?>
     <dc:identifier id="pub-id">urn:uuid:workplace-survival-handbook</dc:identifier>
     <dc:title>${esc(TITLE)}</dc:title>
     <dc:language>zh-CN</dc:language>
-    <dc:creator>职场打工创业高性价比大全</dc:creator>
+    <dc:creator>打工创业职场人手一份的职场答疑手册</dc:creator>
     <meta property="dcterms:modified">${new Date().toISOString().slice(0, 19)}Z</meta>
   </metadata>
   <manifest>
