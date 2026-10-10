@@ -90,45 +90,76 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+          cache-dependency-path: tools/epub/package-lock.json
+
+      - name: EPUB
+        run: |
+          npm ci
+          node build.mjs
+        working-directory: tools/epub
 
       - name: 离线单文件 HTML
         run: node tools/offline/build.mjs
 
-      - name: EPUB
-        run: cd tools/epub && npm ci && npm run build
-      - name: epubcheck
-        run: |
-          curl -fsSL -o /tmp/epubcheck.jar https://github.com/w3c/epubcheck/releases/download/v5.1.0/epubcheck-5.1.0.jar
-          java -jar /tmp/epubcheck.jar dist/Workplace-Survival-Handbook.epub || true
-
-      - name: 装 pandoc 和 typst
-        run: |
-          curl -fsSL -o /tmp/pandoc.tar.gz "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-linux-amd64.tar.gz"
-          tar -xzf /tmp/pandoc.tar.gz -C /tmp
-          curl -fsSL -o /tmp/typst.tar.gz "https://github.com/typst/typst/releases/download/v${TYPST_VERSION}/typst-x86_64-unknown-linux-musl.tar.gz"
-          tar -xzf /tmp/typst.tar.gz -C /tmp
-          mkdir -p /tmp/bin
-          mv /tmp/pandoc-${PANDOC_VERSION}/bin/pandoc /tmp/bin/
-          mv /tmp/typst-x86_64-unknown-linux-musl/typst /tmp/bin/
-          echo "/tmp/bin" >> $GITHUB_PATH
-      - name: PDF
-        run: node tools/pdf/build.mjs
-
       - name: Anki 牌组
         run: node tools/anki/build.mjs
+
+      - name: 装 pandoc、typst 和中文字体
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
+          curl -sSL "https://github.com/jgm/pandoc/releases/download/${PANDOC_VERSION}/pandoc-${PANDOC_VERSION}-linux-amd64.tar.gz" | tar xz
+          curl -sSL "https://github.com/typst/typst/releases/download/v${TYPST_VERSION}/typst-x86_64-unknown-linux-musl.tar.xz" | tar xJ
+          echo "$PWD/pandoc-${PANDOC_VERSION}/bin" >> "$GITHUB_PATH"
+          echo "$PWD/typst-x86_64-unknown-linux-musl" >> "$GITHUB_PATH"
+
+      - name: PDF
+        run: |
+          typst fonts | grep -i -E 'noto (serif|sans) cjk' || echo '没找到 Noto CJK，PDF 会退到别的字体，检查 fonts-noto-cjk 这一步'
+          node tools/pdf/build.mjs
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      # epubcheck 只是提示，不该挡发布：正文能不能过校验，和该不该把四样发出去是两回事。
+      - name: epubcheck
+        continue-on-error: true
+        run: |
+          curl -sSL -o epubcheck.zip https://github.com/w3c/epubcheck/releases/download/v5.4.0/epubcheck-5.4.0.zip
+          unzip -q epubcheck.zip
+          java -jar epubcheck-5.4.0/epubcheck.jar dist/Workplace-Survival-Handbook.epub || true
 
       - uses: actions/upload-artifact@v4
         with:
           name: book
-          path: dist/
+          path: |
+            dist/Workplace-Survival-Handbook.epub
+            dist/Workplace-Survival-Handbook.pdf
+            dist/Workplace-Survival-Handbook.html
+            dist/Workplace-Survival-Handbook.apkg
 
-      - name: 发布到固定 Release
+      - name: 发布到 Release epub-latest
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: |
-          gh release view epub-latest >/dev/null 2>&1 || gh release create epub-latest --title "电子版（自动生成）" --notes "下载链接固定不变，正文每次更新后自动覆盖。"
-          gh release upload epub-latest dist/* --clobber
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git tag -f epub-latest
+          git push -f origin epub-latest
+          notes="正文提交 ${GITHUB_SHA::7}，生成于 $(date -u -d '+8 hours' +'%Y-%m-%d %H:%M')（北京时间）。EPUB、PDF、离线单文件 HTML、Anki 牌组四样，正文每次更新后自动重新生成，下载链接固定不变。"
+          if gh release view epub-latest >/dev/null 2>&1; then
+            gh release edit epub-latest --title "电子书（EPUB / PDF / 离线 HTML / Anki，自动更新）" --notes "$notes"
+          else
+            gh release create epub-latest --title "电子书（EPUB / PDF / 离线 HTML / Anki，自动更新）" --notes "$notes" --latest=false
+          fi
+          gh release upload epub-latest \
+            dist/Workplace-Survival-Handbook.epub \
+            dist/Workplace-Survival-Handbook.pdf \
+            dist/Workplace-Survival-Handbook.html \
+            dist/Workplace-Survival-Handbook.apkg --clobber
