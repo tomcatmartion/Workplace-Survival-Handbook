@@ -325,7 +325,7 @@ const WILL_LABEL = {'否':'不用毅力','些':'要一点毅力','中':'要一�
 
 /* ---------- 拆分规则（<split-rules>） ----------
    超长的收益、备注和来源在四个出口里都拆成子条目，正文 md 不动。
-   规则有两份：这份给检索页和离线版，tools/lib/split-items.mjs 给 EPUB、PDF。
+   规则有两份：这份给检索页和离线版，tools/lib/split-items.mjs 给 EPUB。
    改一边要同步改另一边，`node tools/check-split.mjs` 拿全书逐条比对两边结果。 */
 // <split-rules>
 const SPLIT_LIMIT = 300;

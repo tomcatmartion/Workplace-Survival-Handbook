@@ -1,4 +1,4 @@
-// 全书结构解析。EPUB、PDF、离线单文件、Anki 牌组、sync-stats、check-* 全都用这一份，
+// 全书结构解析。EPUB、离线单文件、Anki 牌组、sync-stats、check-* 全都用这一份，
 // 新增节或长文不用改脚本：文件清单从 README 里扒。
 import { readFile, readdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';

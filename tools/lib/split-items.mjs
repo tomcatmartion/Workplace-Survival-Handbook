@@ -1,5 +1,5 @@
-// 超长的收益、备注和来源在 EPUB / PDF 里拆成子条目，正文 md 不动。
-// 规则有两份：这份给 EPUB、PDF；index.html 里 // <split-rules> 那段给检索页和离线版。
+// 超长的收益、备注和来源在 EPUB 里拆成子条目，正文 md 不动。
+// 规则有两份：这份给 EPUB；index.html 里 // <split-rules> 那段给检索页和离线版。
 // 改一边要同步改另一边，`node tools/check-split.mjs` 拿全书逐条比对两边结果。
 
 /** 在句号处断开，且下一句开始引用新依据时才拆。 */

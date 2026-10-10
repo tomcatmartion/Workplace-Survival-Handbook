@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // 拆分规则一致性检查。
-// 超长的收益、备注和来源在四个出口里都拆成子条目，正文 md 不动。规则有两份：
-// tools/lib/split-items.mjs 给 EPUB、PDF；index.html 里 // <split-rules> 那段给检索页和离线版。
+// 超长的收益、备注和来源在三个出口里都拆成子条目，正文 md 不动。规则有两份：
+// tools/lib/split-items.mjs 给 EPUB；index.html 里 // <split-rules> 那段给检索页和离线版。
 // 改一边要同步改另一边，这个脚本拿全书逐条比对两边结果，也查拆完能不能逐字拼回原文。
 //   node tools/check-split.mjs
 import { readFile } from 'node:fs/promises';

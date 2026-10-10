@@ -25,7 +25,7 @@ AI 助手 skill 支持 Claude Code 和 Codex。装上后直接问「加班费怎
 <table>  
 <tr><td align="right"><b>下载</b></td><td align="left">
 
-[PDF](https://github.com/tomcatmartion/Workplace-Survival-Handbook/releases/download/epub-latest/Workplace-Survival-Handbook.pdf) · [EPUB](https://github.com/tomcatmartion/Workplace-Survival-Handbook/releases/download/epub-latest/Workplace-Survival-Handbook.epub) · [离线单文件（HTML）](https://github.com/tomcatmartion/Workplace-Survival-Handbook/releases/download/epub-latest/Workplace-Survival-Handbook.html) · [Anki 牌组](https://github.com/tomcatmartion/Workplace-Survival-Handbook/releases/download/epub-latest/Workplace-Survival-Handbook.apkg)
+[EPUB](https://github.com/tomcatmartion/Workplace-Survival-Handbook/releases/download/epub-latest/Workplace-Survival-Handbook.epub) · [离线单文件（HTML）](https://github.com/tomcatmartion/Workplace-Survival-Handbook/releases/download/epub-latest/Workplace-Survival-Handbook.html) · [Anki 牌组](https://github.com/tomcatmartion/Workplace-Survival-Handbook/releases/download/epub-latest/Workplace-Survival-Handbook.apkg)
 
 </td></tr>
 <tr><td align="right"><b>查阅</b></td><td align="left">
@@ -101,10 +101,9 @@ AI 助手 skill 支持 Claude Code 和 Codex。装上后直接问「加班费怎
 - **条目之间会互相指路**（「见第 15 节第 3 条」这种）：在检索页里，这种指路带一条虚线。点一下，就地显示被指的那条的标题和「说人话」。想真的翻过去，再按「跳过去」。那一条正好被筛选条件藏起来了，页面会自动把筛选清掉。在 GitHub 上直接读正文点不动，但每处指路后面都写着指向什么（「见第 15 节第 3 条（开张前选对主体）」）。不翻过去也知道说的是哪条。
 - **想按顺序读**：每节内的条目按性价比从高到低排列，从每节前几条开始看就行。
 - **想离线看、想发给别人**：下载[离线单文件 HTML](https://github.com/tomcatmartion/Workplace-Survival-Handbook/releases/download/epub-latest/Workplace-Survival-Handbook.html)，整篇连同检索和筛选都在这一个文件里，双击就开，不用服务器也不用联网，微信里也能直接传。
-- **想打印或在手机上翻**：下载 [PDF](https://github.com/tomcatmartion/Workplace-Survival-Handbook/releases/download/epub-latest/Workplace-Survival-Handbook.pdf)，A4 排版，带目录页码和书签，每节另起一页。
 - **想在 Kindle 或其他阅读器上读**：下载 [EPUB 电子书](https://github.com/tomcatmartion/Workplace-Survival-Handbook/releases/download/epub-latest/Workplace-Survival-Handbook.epub)，Kindle 用 Send to Kindle 发过去即可。
 - **想记住、隔几天复习一遍**：下载 [Anki 牌组](https://github.com/tomcatmartion/Workplace-Survival-Handbook/releases/download/epub-latest/Workplace-Survival-Handbook.apkg)，用 Anki 打开就导入。一条一张卡，按节分成子牌组。正面是建议，背面是说人话、成本和证据等级。可以只学其中几节，也可以按「性价比极高」这类标签筛。以后重新下载再导入一次，卡片内容会更新，复习记录不丢。
-- **这四样都是正文每次更新后自动重新生成的**，下载链接固定不变；转发出去的那一份不会跟着更新，以在线版为准。自己生成的办法见下面「自己跑一份」。
+- **这三样都是正文每次更新后自动重新生成的**，下载链接固定不变；转发出去的那一份不会跟着更新，以在线版为准。自己生成的办法见下面「自己跑一份」。
 - **看不懂那串数字**：每条都有一行「说人话」。它把「收益」栏里那些法条和数字，翻成「能给多少钱、会摊上什么后果」这样的日常说法。它只用「收益」栏已经写到的内容，不添新数字。只看这一行就够拿主意。「收益」栏里原样留着条款号和原文，想自己核对就看那一栏。
 - **只想看结论最硬的**：在检索页里勾选证据等级 A，只留下引到了法条或官方文件原文的 2856 条。
 - **只想看最值得做的**：勾选性价比「极高」，得到既不花钱、不花时间、不需要毅力，收益又落在最大一档的条目。再叠加一个「换回什么」，就是该口径下的优先清单。
