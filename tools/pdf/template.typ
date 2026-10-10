@@ -1,7 +1,5 @@
-$--
-$-- 正文版式。$body$ 之前是 pandoc 生成的正文要用的辅助定义，别删。
-$-- 变量由 tools/pdf/build.mjs 在做 string 替换时填进来：$booktitle$ $subtitle$ $builddate$ $commit$ $site$ $repo$
-$--
+// 正文版式。开头这几行之后是 pandoc 输出正文要用的辅助定义，别删。
+// 文件里的占位符由 tools/pdf/build.mjs 做字符串替换后填进来（书名、副标题、生成时间、提交号、站点、仓库）。
 #set terms(hanging-indent: 1.5em)
 
 #set table(inset: 6pt, stroke: none)
