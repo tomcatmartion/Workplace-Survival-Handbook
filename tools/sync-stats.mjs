@@ -8,6 +8,7 @@
 //
 // 新增要随统计变的数字，就往下面的 EDITS 表里加一行，别在正文里另写死一处。
 import { readFile, writeFile, mkdtemp, rm, stat } from 'node:fs/promises';
+import { statSync } from 'node:fs';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import os from 'node:os';
@@ -99,7 +100,7 @@ function findChrome() {
     '/Applications/Chromium.app/Contents/MacOS/Chromium',
     '/usr/bin/google-chrome', '/usr/bin/chromium'
   ];
-  return c.find(p => { try { return require('node:fs').statSync(p).isFile(); } catch { return false; } });
+  return c.find(p => { try { return statSync(p).isFile(); } catch { return false; } });
 }
 const chrome = findChrome();
 if (!chrome) { console.log('没找到 Chrome，og.png 未重出。设置环境变量 CHROME 指到可执行文件再跑一次。'); process.exit(0); }
@@ -107,7 +108,9 @@ const dir = await mkdtemp(path.join(os.tmpdir(), 'og-'));
 const out = path.join(ROOT, 'og.png');
 try {
   await run(chrome, [
-    '--headless=new', `--user-data-dir=${dir}`, '--hide-scrollbars', '--force-device-scale-factor=1',
+    '--headless=new', '--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage',
+    '--use-angle=swiftshader', '--disable-software-rasterizer',
+    `--user-data-dir=${dir}`, '--hide-scrollbars', '--force-device-scale-factor=1',
     '--window-size=1200,630', `--screenshot=${out}`, '--default-background-color=00000000',
     'file://' + path.join(ROOT, 'tools/og.html')
   ], { timeout: 60000 });

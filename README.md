@@ -1,30 +1,33 @@
 <div align="center">
 
-![职场打工创业高性价比大全 —— 用最少的钱、时间和精力，换回最多的收入、时间和人身自由](og.png)
+<img src="og.png" alt="职场打工创业高性价比大全 —— 用最少的钱、时间和精力，换回最多的收入、时间和人身自由" width="820">
 
 # 职场打工创业高性价比大全
 
-讲上班那点钱怎么算、字怎么签、期限怎么卡，讲被裁和被欠薪时能领什么、去哪求助，讲开店开公司哪些步会把家底赔进去，也讲副业、技能、跳槽和退场。法律、社保、税务这些制度上的内容，按中国大陆的现行规定写。  
-  
-1108 条建议，每条写明花掉什么、换回什么、证据有多硬，来源只引法律、行政法规和官方文件，找不到官方原文的标注待核实。
+讲上班那点钱怎么算、字怎么签、期限怎么卡，讲被裁和被欠薪时能领什么、去哪求助，讲开店开公司哪些步会把家底赔进去，也讲副业、技能、跳槽和退场。法律、社保、税务这些制度上的内容，按中国大陆的现行规定写。<br>
+3137 条建议，每条写明花掉什么、换回什么、证据有多硬，来源只引法律、行政法规和官方文件，找不到官方原文的标注待核实。
 
 不用全做：这是按性价比排好的备选单，不是任务清单——挑走一两条就算数。全书在 24 个通用框架主题之外，又按《国民经济行业分类》GB/T 4754-2017 的 97 个大类逐类补齐了行业章节，并附若干细分场景，共 134 节。
 
-![在线检索](https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E6%A3%80%E7%B4%A2-%E7%82%B9%E8%BF%99%E9%87%8C%E6%89%93%E5%BC%80-3451b2?style=flat-square)
+书里的内容可能过时，也可能有错。不少制度各地执行不一样。真去办事、签约、打官司时，以当地部门和律师的说法为准。发现写错了，欢迎[提 issue](https://github.com/tomcatmartion/Workplace-Survival-Handbook/issues)。
 
-![条目](https://img.shields.io/badge/%E6%9D%A1%E7%9B%AE-1108%20%E6%9D%A1-18794e?style=flat-square)
-
-![证据分级](https://img.shields.io/badge/%E8%AF%81%E6%8D%AE%E5%88%86%E7%BA%A7-A%20881%20%C2%B7%20B%20155%20%C2%B7%20C%2072-915930?style=flat-square)
-
-![原始文献](https://img.shields.io/badge/%E5%8E%9F%E5%A7%8B%E6%96%87%E7%8C%AE-1212%20%E6%9D%A1%E9%93%BE%E6%8E%A5-565a5f?style=flat-square)
-
-![许可](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-CC%20BY%204.0-565a5f?style=flat-square)
+[![在线检索](https://img.shields.io/badge/%E5%9C%A8%E7%BA%BF%E6%A3%80%E7%B4%A2-%E7%82%B9%E8%BF%99%E9%87%8C%E6%89%93%E5%BC%80-3451b2?style=flat-square)](https://tomcatmartion.github.io/Workplace-Survival-Handbook/)
+[![条目](https://img.shields.io/badge/%E6%9D%A1%E7%9B%AE-3137%20%E6%9D%A1-18794e?style=flat-square)](#目录)
+[![证据分级](https://img.shields.io/badge/%E8%AF%81%E6%8D%AE%E5%88%86%E7%BA%A7-A%202856%20%C2%B7%20B%20209%20%C2%B7%20C%2072-915930?style=flat-square)](#证据分级)
+[![原始文献](https://img.shields.io/badge/%E5%8E%9F%E5%A7%8B%E6%96%87%E7%8C%AE-3988%20%E6%9D%A1%E9%93%BE%E6%8E%A5-565a5f?style=flat-square)](docs/核实记录/)
+[![许可](https://img.shields.io/badge/%E8%AE%B8%E5%8F%AF-CC%20BY%204.0-565a5f?style=flat-square)](#许可)
+[![Claude Code 协助编写](https://img.shields.io/badge/Claude%20Code-%E5%8D%8F%E5%8A%A9%E7%BC%96%E5%86%99-D97757?style=flat-square&logo=claude&logoColor=white)](https://claude.com/claude-code)
 
 ### [打开在线检索页](https://tomcatmartion.github.io/Workplace-Survival-Handbook/) · [让 AI 照书回答（skill）](skills/workplace-decision-guide/README.md)
 
 AI 助手 skill 支持 Claude Code 和 Codex。装上后直接问「加班费怎么算」「替朋友的公司签担保签不签」，它先查书里的条目再回答，并注明出自第几节第几条。
 
 <table>  
+<tr><td align="right"><b>下载</b></td><td align="left">
+
+[PDF](https://github.com/tomcatmartion/Workplace-Survival-Handbook/releases/download/epub-latest/Workplace-Survival-Handbook.pdf) · [EPUB](https://github.com/tomcatmartion/Workplace-Survival-Handbook/releases/download/epub-latest/Workplace-Survival-Handbook.epub) · [离线单文件（HTML）](https://github.com/tomcatmartion/Workplace-Survival-Handbook/releases/download/epub-latest/Workplace-Survival-Handbook.html) · [Anki 牌组](https://github.com/tomcatmartion/Workplace-Survival-Handbook/releases/download/epub-latest/Workplace-Survival-Handbook.apkg)
+
+</td></tr>
 <tr><td align="right"><b>查阅</b></td><td align="left">
 
 [目录](#目录) · [术语表](#读懂数字术语表) · [核实记录](docs/核实记录/)
@@ -97,9 +100,13 @@ AI 助手 skill 支持 Claude Code 和 Codex。装上后直接问「加班费怎
 - **想按条件挑**：打开[在线检索页](https://tomcatmartion.github.io/Workplace-Survival-Handbook/)，可以按关键词、章节、证据等级来筛，也可以按「花不花钱、花多少时间、要不要毅力」这三样筛，几个条件能叠着用。页面上的内容直接取自 book/ 目录里的正文，正文一改，页面跟着改。
 - **条目之间会互相指路**（「见第 15 节第 3 条」这种）：在检索页里，这种指路带一条虚线。点一下，就地显示被指的那条的标题和「说人话」。想真的翻过去，再按「跳过去」。那一条正好被筛选条件藏起来了，页面会自动把筛选清掉。在 GitHub 上直接读正文点不动，但每处指路后面都写着指向什么（「见第 15 节第 3 条（开张前选对主体）」）。不翻过去也知道说的是哪条。
 - **想按顺序读**：每节内的条目按性价比从高到低排列，从每节前几条开始看就行。
-- **想离线看、想发给别人**：下载离线单文件 HTML，整篇连同检索和筛选都在这一个文件里，双击就开，不用服务器也不用联网。自己生成的办法见下面「自己跑一份」。
+- **想离线看、想发给别人**：下载[离线单文件 HTML](https://github.com/tomcatmartion/Workplace-Survival-Handbook/releases/download/epub-latest/Workplace-Survival-Handbook.html)，整篇连同检索和筛选都在这一个文件里，双击就开，不用服务器也不用联网，微信里也能直接传。
+- **想打印或在手机上翻**：下载 [PDF](https://github.com/tomcatmartion/Workplace-Survival-Handbook/releases/download/epub-latest/Workplace-Survival-Handbook.pdf)，A4 排版，带目录页码和书签，每节另起一页。
+- **想在 Kindle 或其他阅读器上读**：下载 [EPUB 电子书](https://github.com/tomcatmartion/Workplace-Survival-Handbook/releases/download/epub-latest/Workplace-Survival-Handbook.epub)，Kindle 用 Send to Kindle 发过去即可。
+- **想记住、隔几天复习一遍**：下载 [Anki 牌组](https://github.com/tomcatmartion/Workplace-Survival-Handbook/releases/download/epub-latest/Workplace-Survival-Handbook.apkg)，用 Anki 打开就导入。一条一张卡，按节分成子牌组。正面是建议，背面是说人话、成本和证据等级。可以只学其中几节，也可以按「性价比极高」这类标签筛。以后重新下载再导入一次，卡片内容会更新，复习记录不丢。
+- **这四样都是正文每次更新后自动重新生成的**，下载链接固定不变；转发出去的那一份不会跟着更新，以在线版为准。自己生成的办法见下面「自己跑一份」。
 - **看不懂那串数字**：每条都有一行「说人话」。它把「收益」栏里那些法条和数字，翻成「能给多少钱、会摊上什么后果」这样的日常说法。它只用「收益」栏已经写到的内容，不添新数字。只看这一行就够拿主意。「收益」栏里原样留着条款号和原文，想自己核对就看那一栏。
-- **只想看结论最硬的**：在检索页里勾选证据等级 A，只留下引到了法条或官方文件原文的 881 条。
+- **只想看结论最硬的**：在检索页里勾选证据等级 A，只留下引到了法条或官方文件原文的 2856 条。
 - **只想看最值得做的**：勾选性价比「极高」，得到既不花钱、不花时间、不需要毅力，收益又落在最大一档的条目。再叠加一个「换回什么」，就是该口径下的优先清单。
 - **看到「别」「不要」开头的节标题不用紧张**：节标题说的是这一节想防住的事（别把身体搭进去、别把自己送进去），不是说底下每条都在让你别干什么。真正要做的动作写在条目标题里，一律动词开头，自己就写清了是「做什么」还是「别做什么」。按条目标题读，不用往节标题的语气上套。
 - **看到「框架阶段」的提示**：那一节的条目清单已经定好，正文还没逐条写出。清单里每一条都写清了计划条号和主题，按 CLAUDE.md 的条目格式补齐即可，条号不要挪动——别处已经有引用指到这些条号上。
@@ -133,6 +140,54 @@ python -m http.server 8000
 node tools/offline/build.mjs     # 离线单文件 HTML，产物在 dist/，双击就开
 ```
 
+## 如何装载本 skill（让 AI 照书回答）
+
+本仓库带一个中文 skill `workplace-decision-guide`。装到 AI 助手后，直接问「加班费按几倍算」「朋友让我替他公司签担保，签不签」，它会先把相关条目从 `book/` 正文里查出来，再照书里的算账方式排序回答，并注明出自第几节第几条。查不到就说查不到，不自己编数字。
+
+规则全在 [skills/workplace-decision-guide/SKILL.md](skills/workplace-decision-guide/SKILL.md)；仓库里 `.claude/` 与 `skills/` 两份指向同一份文件，不维护两份。
+
+### 装到 Claude Code
+
+在本仓库目录里开 Claude Code，不用装——`.claude/skills/workplace-decision-guide/` 已经指向这份规则。
+
+想在任何目录下都能用，复制到个人 skill 目录：
+
+```bash
+mkdir -p ~/.claude/skills/workplace-decision-guide && curl -fsSL -o ~/.claude/skills/workplace-decision-guide/SKILL.md "https://raw.githubusercontent.com/tomcatmartion/Workplace-Survival-Handbook/main/skills/workplace-decision-guide/SKILL.md"
+```
+
+之后直接问问题就会触发，也可以显式说「用 workplace-decision-guide 回答」。
+
+### 装到 Codex
+
+在本仓库里开 Codex，不用装——根目录 `AGENTS.md` 已把它指出来。
+
+想在任何目录下都能用，复制到 `~/.agents/skills`：
+
+```bash
+mkdir -p ~/.agents/skills/workplace-decision-guide && curl -fsSL -o ~/.agents/skills/workplace-decision-guide/SKILL.md "https://raw.githubusercontent.com/tomcatmartion/Workplace-Survival-Handbook/main/skills/workplace-decision-guide/SKILL.md"
+```
+
+直接问问题会按描述自动触发，也可输入 `$workplace-decision-guide` 显式调用（注意是 `$` 不是 `/`，新版 Codex 输 `/workplace-decision-guide` 会报 `Unrecognized command`；没出现就重启一次 Codex）。
+
+### 装到 WorkBuddy
+
+复制到用户级 skill 目录：
+
+```bash
+mkdir -p ~/.workbuddy/skills/workplace-decision-guide && cp skills/workplace-decision-guide/SKILL.md ~/.workbuddy/skills/workplace-decision-guide/SKILL.md
+```
+
+### 正文从哪来
+
+本地有仓库就读本地的 `book/`；没有就现取：
+
+```bash
+git clone --depth 1 https://github.com/tomcatmartion/Workplace-Survival-Handbook.git "${TMPDIR:-/tmp}/wsh"
+```
+
+取不到网络就如实说取不到，不替代正文。
+
 ## 四种资源
 
 这本书想帮你多留住的不只是工资，一共四样东西：
@@ -160,7 +215,7 @@ node tools/offline/build.mjs     # 离线单文件 HTML，产物在 dist/，双�
 | B  | 有法规或官方文件支撑，但说不出一个确切数字；或者只有部门规范性文件、地方口径撑着 |
 | C  | 作者自己的经验，或者大家公认的做法，没有直接的文件依据              |
 
-全书 1108 条中 A 级 881 条、B 级 155 条、C 级 72 条，另有 3 处标注了待核实。有争议的 A/B 级条目会标注「争议」并列出反方证据。所有来源只引原始文件（法律、行政法规附国务院公报或人大网链接，部门规章附部委官网或 gov.cn 转载页），不引二手转述。找不到官方原文的数字标「待核实」，不当结论用。
+全书 3137 条中 A 级 2856 条、B 级 209 条、C 级 72 条，另有 3 处标注了待核实。有争议的 A/B 级条目会标注「争议」并列出反方证据。所有来源只引原始文件（法律、行政法规附国务院公报或人大网链接，部门规章附部委官网或 gov.cn 转载页），不引二手转述。找不到官方原文的数字标「待核实」，不当结论用。
 
 A 级只说明「有明文、出处可核」，不说明「你一定拿得到」。写到「法律支持你」的条目，必须连过程成本一起说：要不要打官司、大概多久、律师费谁掏。只说结果不说过程，等于把胜诉率当成收益。
 
